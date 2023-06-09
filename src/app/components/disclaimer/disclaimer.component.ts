@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {AudioPlayerComponent} from "../audio-player/audio-player.component";
+import {UserManagerService} from "../../services/user-manager.service";
 
 @Component({
   selector: 'app-disclaimer',
@@ -9,7 +10,7 @@ import {AudioPlayerComponent} from "../audio-player/audio-player.component";
 })
 export class DisclaimerComponent {
 
-  constructor(public router: Router) {
+  constructor(public router: Router, public userManager: UserManagerService) {
   }
 
   public continue() {

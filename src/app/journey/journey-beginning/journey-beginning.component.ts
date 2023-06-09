@@ -16,6 +16,6 @@ export class JourneyBeginningComponent implements AfterViewInit{
   }
 
   public continue() {
-
+    window.alert("This is the end of the demo. Thank you for trying it out!");
   }
 }
