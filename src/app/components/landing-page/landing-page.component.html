@@ -1,0 +1,12 @@
+<h1>Bienvenidos a mi presentación interactiva</h1>
+
+<h4>Para continuar, introduce tu nombre.</h4>
+<div class="ui form">
+  <div class="field">
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="name">
+  </div>
+
+  <div class="field">
+    <div class="ui green secondary button" (click)="continue()">Continuar</div>
+  </div>
+</div>

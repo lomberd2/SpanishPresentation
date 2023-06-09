@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "SpanishPresentation"
+  "defaultProject": "SpanishPresentation",
+  "cli": {
+    "analytics": false
+  }
 }
