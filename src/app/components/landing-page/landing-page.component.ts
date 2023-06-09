@@ -10,9 +10,16 @@ import {Router} from "@angular/router";
 export class LandingPageComponent {
 
   // Get for the input fields
-  public name = 'Test';
+  public name = '';
 
   constructor(private userManager: UserManagerService, private router: Router) {
+  }
+
+  public sanitizeName(once: boolean = false) {
+    this.name = this.name.replace(/[^a-zA-Z0-9 ]/g, '');
+    this.name = this.name.replace(/ +(?= )/g,'');
+    // Remove all spaces
+    this.name = this.name.replace(/\s/g, '');
   }
 
 
@@ -23,6 +30,8 @@ export class LandingPageComponent {
       alert('Introduzca un nombre válido\n\nPlease enter a valid name');
       return;
     }
+
+    this.sanitizeName();
 
     // Set the name
     this.userManager.setName(this.name);
