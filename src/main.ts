@@ -13,4 +13,4 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
 
 export const IS_DEV = !environment.production;
-export const IS_TESTING: boolean = true;
+export const IS_TESTING: boolean = false;
