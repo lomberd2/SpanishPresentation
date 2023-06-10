@@ -15,6 +15,8 @@ import { TestBeginningComponent } from './journey/test-beginning/test-beginning.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { ResultsComponent } from './journey/results/results.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {MatSelectModule} from "@angular/material/select";
     AudioPlayerComponent,
     MultipleChoiceComponent,
     UserInformationComponent,
-    TestBeginningComponent
+    TestBeginningComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import {MatSelectModule} from "@angular/material/select";
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [UserManagerService],
   bootstrap: [AppComponent]

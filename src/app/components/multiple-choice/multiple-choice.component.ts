@@ -105,4 +105,10 @@ export class MultipleChoiceComponent implements AfterViewInit {
 
     this.eventEmitter.emit(eventResult);
   }
+
+  public reset() {
+    this.selected = [];
+    //@ts-ignore
+    $('.ui.dropdown').dropdown('clear');
+  }
 }
