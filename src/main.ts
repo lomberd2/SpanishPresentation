@@ -10,3 +10,7 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+
+export const IS_DEV = !environment.production;
+export const IS_TESTING: boolean = true;

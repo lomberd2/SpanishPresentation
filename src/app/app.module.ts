@@ -11,6 +11,10 @@ import { MultipleChoiceComponent } from './components/multiple-choice/multiple-c
 import { UserInformationComponent } from './components/user-information/user-information.component';
 import { UserManagerService } from "./services/user-manager.service";
 import {FormsModule} from "@angular/forms";
+import { TestBeginningComponent } from './journey/test-beginning/test-beginning.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import {FormsModule} from "@angular/forms";
     JourneyBeginningComponent,
     AudioPlayerComponent,
     MultipleChoiceComponent,
-    UserInformationComponent
+    UserInformationComponent,
+    TestBeginningComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [UserManagerService],
   bootstrap: [AppComponent]

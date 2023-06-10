@@ -1,1 +1,34 @@
-<p>multiple-choice works!</p>
+<div style="width: 588px">
+  <div class="ui top attached secondary segment">
+    <h1 class="ui header">TEST QUESTION</h1>
+  </div>
+  <div class="ui bottom attached segment">
+    <div class="ui form">
+      <div class="field">
+        <label>Question</label>
+        <p style="color: #1b1c1d">{{question}}</p>
+      </div>
+      <div class="field">
+        <label>Selected</label>
+        <p *ngFor="let selection of selected" style="color: #1b1c1d">● {{selection}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui inverted segment">
+    <div class="ui inverted form">
+      <div class="field">
+        <label>Select Answers</label>
+        <select multiple class="ui fluid dropdown" [(ngModel)]="selected">
+          <option *ngFor="let answer of answers" [value]="answer">{{answer}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="" style="heigh: 50px;">
+    <div (click)="continue()" style="margin: 10px 0;" class="ui right floated secondary button">Continuar</div>
+  </div>
+
+</div>

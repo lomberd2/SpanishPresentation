@@ -1,5 +1,6 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {AudioPlayerComponent} from "../../components/audio-player/audio-player.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-journey-beginning',
@@ -8,7 +9,7 @@ import {AudioPlayerComponent} from "../../components/audio-player/audio-player.c
 })
 export class JourneyBeginningComponent implements AfterViewInit{
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngAfterViewInit() {
     AudioPlayerComponent.pause();
@@ -16,6 +17,6 @@ export class JourneyBeginningComponent implements AfterViewInit{
   }
 
   public continue() {
-    window.alert("This is the end of the demo. Thank you for trying it out!");
+    this.router.navigate(["testBeginning"]);
   }
 }

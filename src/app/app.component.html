@@ -1,16 +1,34 @@
-<div *ngIf="!hasUserInteracted" class="FirstLoadingOverlay" (click)="hasUserInteracted=true">
-  <h1>> Haga clic para empezar <</h1>
-  <span>>> Click to begin <<</span>
+<div *ngIf="IS_TESTING">
+  <div class="page-container">
+    <div></div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="music-player">
+
+    </div>
+  </div>
 </div>
 
-<div [class.no-display]="!hasUserInteracted" class="page-container">
-  <div></div>
+<div *ngIf="!IS_TESTING">
 
-  <div>
-    <router-outlet></router-outlet>
+  <div *ngIf="!hasUserInteracted" class="FirstLoadingOverlay" (click)="hasUserInteracted=true">
+    <h1>> Haga clic para empezar <</h1>
+    <span>>> Click to begin <<</span>
   </div>
 
-  <div class="music-player">
-    <app-audio-player></app-audio-player>
+  <div [class.no-display]="!hasUserInteracted" class="page-container">
+    <div></div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="music-player">
+      <app-audio-player></app-audio-player>
+    </div>
   </div>
+
 </div>

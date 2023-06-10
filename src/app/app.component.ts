@@ -1,4 +1,5 @@
 import {AfterViewInit, Component} from '@angular/core';
+import {IS_TESTING} from "../main";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import {AfterViewInit, Component} from '@angular/core';
 })
 export class AppComponent {
   public hasUserInteracted = false;
+  protected readonly IS_TESTING = IS_TESTING;
 }
