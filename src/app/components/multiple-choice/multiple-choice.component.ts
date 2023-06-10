@@ -89,23 +89,5 @@ export class MultipleChoiceComponent implements AfterViewInit {
 
 
     this.eventEmitter.emit(eventResult);
-
-    let AlertMessage: string = "";
-    switch (eventResult.EventType) {
-      case MultipleEvents.CORRECT_ANSWER: {
-        AlertMessage = `Correct! You have reached the maximum score of ${this.maxReachableScore} points!`;
-        break;
-      }
-      case MultipleEvents.COMPLETELY_WRONG_ANSWER: {
-        AlertMessage = `Wrong! You have reached the minimum score of ${this.minReachableScore} points!\nCorrect answers: \n● ${eventResult.EventData.CorrectAnswers.join("\n● ")}`;
-        break;
-      }
-      case MultipleEvents.SOME_WRONG_ANSWER: {
-        AlertMessage = `Wrong! You have reached ${eventResult.EventData.ReachedScore} points out of ${this.maxReachableScore}!\nCorrect answers:\n● ${eventResult.EventData.CorrectAnswers.join("\n● ")}`;
-        break;
-      }
-    }
-
-    alert(AlertMessage);
   }
 }
