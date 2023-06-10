@@ -1,5 +1,5 @@
 <div *ngIf="!isHidden" class="audio-container">
   <span [class.hidden]="!isPlaying" id="interpret"></span>
-  <audio [class.hidden]="isPlayerPaused" id="audio" [attr.controls]="isPlaying" autoplay loop></audio>
+  <audio  id="audio" [attr.controls]="isPlaying" autoplay loop></audio>
   <a [class.hidden]="!isPlaying" id="original" target="_blank">Escuche el original en YouTube</a>
 </div>
