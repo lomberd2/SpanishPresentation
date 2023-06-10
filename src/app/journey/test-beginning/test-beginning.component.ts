@@ -115,7 +115,7 @@ export class TestBeginningComponent implements AfterViewInit {
   }
 
   public showToast(message: string) {
-    this._snackBar.open(message + "  Continúa en 5 segundos...", "Cerrar", {
+    this._snackBar.open(message, "Cerrar", {
       duration: 5000,
       horizontalPosition: "center",
       verticalPosition: "top",
