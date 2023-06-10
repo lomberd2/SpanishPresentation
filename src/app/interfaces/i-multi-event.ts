@@ -8,5 +8,7 @@ export interface IMultiEvent {
     CorrectAnswers: string[];
     GivenAnswers: string[];
     ReachedScore: number;
+    MaxReachableScore: number;
+    MinReachableScore: number;
   }
 }

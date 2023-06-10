@@ -65,6 +65,19 @@ export class MultipleChoiceComponent implements AfterViewInit {
     return this.getScore() === this.minReachableScore;
   }
 
+  public setNextQuestion(multiQuestion: IMultiQuestion) {
+    this.multiQuestion = multiQuestion;
+
+    this.question = this.multiQuestion.question;
+    this.answers = this.multiQuestion.answers;
+    this.correctAnswers = this.multiQuestion.correctAnswers;
+
+    this.selected = [];
+
+    this.maxReachableScore = this.multiQuestion.points.correct * this.multiQuestion.correctAnswers.length;
+    this.minReachableScore = this.multiQuestion.points.wrong * (this.multiQuestion.answers.length - this.multiQuestion.correctAnswers.length);
+  }
+
   public continue() {
     let eventResult: IMultiEvent = {
       EventType: MultipleEvents.NO_ANSWER,
@@ -73,7 +86,9 @@ export class MultipleChoiceComponent implements AfterViewInit {
         CorrectAnswers: this.correctAnswers,
         Answers: this.answers,
         GivenAnswers: this.selected,
-        ReachedScore: this.getScore()
+        ReachedScore: this.getScore(),
+        MaxReachableScore: this.maxReachableScore,
+        MinReachableScore: this.minReachableScore
       }
     } as IMultiEvent;
 
