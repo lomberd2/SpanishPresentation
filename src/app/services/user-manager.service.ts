@@ -51,7 +51,7 @@ export class UserManagerService {
    * Sets the score to the given value.
    * @param score
    */
-  static setScore(score: number) {
+  setScore(score: number) {
     UserManagerService.userScore = score;
   }
 

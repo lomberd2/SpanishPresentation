@@ -33,6 +33,8 @@ export class TestBeginningComponent implements AfterViewInit {
 
     AudioPlayerComponent.show();
 
+    UserManagerService.resetScore();
+
     this.nextQuestion();
 
     this.eventListener();
