@@ -103,6 +103,8 @@ export class TestBeginningComponent implements AfterViewInit {
         }
       }
 
+      this.showAlert(event);
+
       this.userManager.addScore(scoreModifier);
 
       this.showToast(toastMessage);
@@ -112,6 +114,26 @@ export class TestBeginningComponent implements AfterViewInit {
 
       //alert(AlertMessage);
     });
+  }
+
+  public showAlert(event: IMultiEvent) {
+    let AlertMessage: string = "";
+    switch (event.EventType) {
+      case MultipleEvents.CORRECT_ANSWER: {
+        AlertMessage = `Correct! You have reached the maximum score of ${event.EventData.MaxReachableScore} points!`;
+        break;
+      }
+      case MultipleEvents.COMPLETELY_WRONG_ANSWER: {
+        AlertMessage = `Wrong! You have reached the minimum score of ${event.EventData.MinReachableScore} points!\nCorrect answers: \n● ${event.EventData.CorrectAnswers.join("\n● ")}`;
+        break;
+      }
+      case MultipleEvents.SOME_WRONG_ANSWER: {
+        AlertMessage = `Wrong! You have reached ${event.EventData.ReachedScore} points out of ${event.EventData.MaxReachableScore}!\nCorrect answers:\n● ${event.EventData.CorrectAnswers.join("\n● ")}`;
+        break;
+      }
+    }
+
+    alert(AlertMessage);
   }
 
   public showToast(message: string) {
@@ -258,9 +280,9 @@ const tests: IMultiQuestion[] = [
   },
   {
     title: "Pregunta nº 14",
-    question: "Rellena el hueco con la [...] correcta de la canción<br><br>[Ed] •‒› Tú no te imaginas lo que tengo pa ti [1:44+]",
-    correctAnswers: ["palabra"],
-    answers: ["palábra", "palábra", "palábra", "palabra"],
+    question: "Rellena el hueco con la palabra correcta de la canción<br><br>[Ed] •‒› Tú no te [...] lo que tengo pa ti [1:44+]",
+    correctAnswers: ["imaginas"],
+    answers:  ["imaginas", "imáginas", "imagínas", "ímáginas"],
     points: {
       correct: 3,
       wrong: 1
