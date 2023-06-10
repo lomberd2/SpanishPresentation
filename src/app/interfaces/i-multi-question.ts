@@ -1,4 +1,5 @@
 export interface IMultiQuestion {
+  title: string;
   question: string;
   answers: string[];
   correctAnswers: string[];

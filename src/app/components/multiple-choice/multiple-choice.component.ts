@@ -15,6 +15,7 @@ export class MultipleChoiceComponent implements AfterViewInit {
 
   @Input()
   public multiQuestion: IMultiQuestion = {
+    title: "Question Title",
     question: "What is the question?",
     answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
     correctAnswers: ["Answer 1", "Answer 2"],
